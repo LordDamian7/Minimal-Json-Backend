@@ -45,3 +45,18 @@ fetch("http://localhost:4000/api/echo", {
   body: JSON.stringify({ hello: "world" }),
 }).then((r) => r.json()).then(console.log);
 ```
+
+## Deploying on Vercel
+
+`server.js` is a plain long-running Node server, meant for local use — Vercel doesn't run
+those. Instead, the same two endpoints are also implemented as Vercel serverless functions
+in `api/health.js` and `api/echo.js`, which Vercel auto-detects with no config needed.
+
+To deploy: on vercel.com, **Add New → Project → Import** this GitHub repo, leave all
+settings at their defaults, and deploy. Once live, the endpoints are available at:
+
+- `https://<your-project>.vercel.app/api/health`
+- `https://<your-project>.vercel.app/api/echo`
+
+Both work the same way as the local versions above — just swap `http://localhost:4000` for
+your Vercel deployment URL.
