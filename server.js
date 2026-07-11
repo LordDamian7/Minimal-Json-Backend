@@ -41,6 +41,10 @@ const server = http.createServer(async (req, res) => {
     return res.end();
   }
 
+  if (req.method === "GET" && pathname === "/") {
+    return sendJson(res, 200, { message: "Hello, This is my FlyRank Assignment" });
+  }
+
   if (req.method === "GET" && pathname === "/api/health") {
     return sendJson(res, 200, {
       status: "ok",
