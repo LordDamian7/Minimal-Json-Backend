@@ -2,6 +2,10 @@
 
 The smallest possible backend: a single Node.js file, zero dependencies, two JSON endpoints. CORS is enabled so it works from `curl` and directly from browser JavaScript (`fetch`).
 
+## Context for Reviewers
+
+This project is a submission for the FlyRank assignment, demonstrating a minimal backend server with two working JSON endpoints. It is built with plain Node.js (no framework) to keep the implementation as small and readable as possible, and it includes an equivalent Vercel serverless deployment so the endpoints can be verified live rather than only locally. Both endpoints are safe to call repeatedly and require no authentication or setup beyond running `node server.js` or hitting the deployed URL.
+
 ## Run
 
 ```bash
